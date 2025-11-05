@@ -3397,7 +3397,7 @@ Local changes that haven't been synced will be preserved during reset."
       (org-todoist-mode 1))))
 
 ;; Transient interface and display functions
-(require 'transient)
+(eval-and-compile (require 'transient))
 
 (defface org-todoist-title-face
   '((t (:foreground "#E44232" :weight bold :height 1.2)))
