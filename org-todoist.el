@@ -3397,7 +3397,7 @@ Local changes that haven't been synced will be preserved during reset."
       (org-todoist-mode 1))))
 
 ;; Transient interface and display functions
-(eval-and-compile (require 'transient))
+(eval-when-compile (require 'transient))
 
 (defface org-todoist-title-face
   '((t (:foreground "#E44232" :weight bold :height 1.2)))
@@ -3554,7 +3554,7 @@ This affects how Todoist links are opened."
   (interactive)
   (browse-url-xdg-open (org-todoist--create-link nil "PROJECTS")))
 
-;;;###autoload
+;;;###autoload (autoload 'org-todoist-dispatch "org-todoist" nil t)
 (transient-define-prefix org-todoist-dispatch ()
   "Org-Todoist interactive interface."
   :refresh-suffixes t
